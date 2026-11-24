@@ -15,10 +15,14 @@ TIP = "Tip: name your variables like the next person reading them is an AI with 
 OUTPUT_PATH = "/output/entry.txt"
 
 
-def main() -> None:
-    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-    with open(OUTPUT_PATH, "w", encoding="utf-8", newline="") as f:
+def write_tip(path: str = OUTPUT_PATH) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8", newline="") as f:
         f.write(TIP)
+
+
+def main() -> None:
+    write_tip()
 
 
 if __name__ == "__main__":
